@@ -1,4 +1,4 @@
-=== Centaur ===
+=== Centaur ⚖︎ ===
 Contributors: ByDigital
 Tested up to: 6.2
 Requires at least: 6.1
