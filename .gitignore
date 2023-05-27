@@ -1,1 +1,59 @@
-/vendor/
+#compiled source #
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# codekit #
+.sass-cache/
+.codekit-config.json
+config.codekit
+
+# Custom Ignored #
+css/main.css
+css/admin.css
+app/ajax.php
+node_modules/
+dumps/
+bower_components/
+sassdoc/
+build/
+languages/
+.npm-debug.log
+/*.pot
+.env.js
+.env
+vendor
+dev/components/_components.scss
+dev/components/_components.js
+dev/scripts/ajax/*.js
+.gitmodules
+dist/
+
+.idea/
