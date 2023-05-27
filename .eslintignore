@@ -1,3 +1,15 @@
 !.*.js
 **/dist/**
 **/coverage/**
+**/package-lock.json
+postcss.config.js
+webpack.config.js
+package*
+composer*
+.*
+vendor/
+tsconfig*
+tailwind*
+commitlint*
+style.css
+node_modules/

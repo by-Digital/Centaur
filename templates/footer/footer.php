@@ -4,6 +4,6 @@
         <small><em>Love What You Do.</em></small>
     </footer>
 
-    <?php wp_footer(); ?>
+    <?php \wp_footer(); ?>
     </body>
 </html>

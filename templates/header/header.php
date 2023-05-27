@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> x-data>
+<html <?php \language_attributes(); ?> x-data>
 
+    <!-- Head -->
     <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>">
+        <!-- Meta -->
+        <meta charset="<?php \bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Links -->
         <link rel="profile" href="https://gmpg.org/xfn/11">
-        <?php wp_head() ?>
+
+        <!-- WP Head -->
+        <?php \wp_head() ?>
     </head>
 
-    <body :class="$store.bodyClass">
-        <?php wp_body_open() ?>
-        <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'centaur' ); ?></a>
+    <!-- Body -->
+    <body <?php \body_class() ?>>
+        <?php \wp_body_open() ?>
+        <a class="skip-link screen-reader-text" href="#content"><?php \esc_html_e( 'Skip to content', 'centaur' ); ?></a>
 
-        <div id="content" class="site-content">
+        <div id="content" x-data="wpApp()" x-on:popstate.window="init()">
+
+            <?php \wp_nav_menu([
+                'menu'           => 'Primary Menu',
+                'menu_class'     => 'menu',
+                'walker'         => new \Centaur\Helper\NavWalker()
+            ]); ?>
+
+            <div x-show="currentRoute">
+                <h2 x-text="pageCache[currentRoute] ? pageCache[currentRoute].title.rendered : ''" class="text-3xl font-bold underline"></h2>
+                <div x-html="pageCache[currentRoute] ? pageCache[currentRoute].content.rendered : ''"></div>
+
+                <button>hi</button>
+            </div>
+

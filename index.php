@@ -4,6 +4,6 @@
  * Basic index file
 */
 
-get_header();
+\get_header();
 
-get_footer();
+\get_footer();

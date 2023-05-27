@@ -1,1 +1,2 @@
-console.log('init ts');
+import './theme';
+import './navigation';
