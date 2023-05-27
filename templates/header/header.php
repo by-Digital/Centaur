@@ -30,7 +30,5 @@
             <div x-show="currentRoute">
                 <h2 x-text="pageCache[currentRoute] ? pageCache[currentRoute].title.rendered : ''" class="text-3xl font-bold underline"></h2>
                 <div x-html="pageCache[currentRoute] ? pageCache[currentRoute].content.rendered : ''"></div>
-
-                <button>hi</button>
             </div>
 
