@@ -1,1 +1,1 @@
-<?php \get_template_part('templates/header/header');
+<?php \get_template_part('templates/header/header', 'default');
