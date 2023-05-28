@@ -21,7 +21,6 @@ const wpApp = {
             fetchPage(route)
                 .then((response) => response.json())
                 .then((data) => {
-                    console.log(data);
                     this.pageCache[route] = data[0];
                     this.currentRoute = route;
                     this.updateURL(route);
