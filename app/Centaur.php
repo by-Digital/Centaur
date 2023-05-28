@@ -10,6 +10,7 @@ class Centaur
 {
     public function __construct()
     {
+        new \Centaur\WordPress\Support();
         new \Centaur\WordPress\Scripts();
         new \Centaur\WordPress\Menus();
         new \Centaur\WordPress\REST();

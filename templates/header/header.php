@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php \language_attributes(); ?> x-data>
+<html <?php \language_attributes(); ?> x-data="wpApp()">
 
     <!-- Head -->
     <head>
@@ -10,6 +10,8 @@
         <!-- Links -->
         <link rel="profile" href="https://gmpg.org/xfn/11">
 
+        <title x-text="pageCache[currentRoute] ? pageCache[currentRoute].seo.title : ''"></title>
+
         <!-- WP Head -->
         <?php \wp_head() ?>
     </head>
@@ -19,7 +21,7 @@
         <?php \wp_body_open() ?>
         <a class="skip-link screen-reader-text" href="#content"><?php \esc_html_e( 'Skip to content', 'centaur' ); ?></a>
 
-        <div id="content" x-data="wpApp()" x-on:popstate.window="init()">
+        <div id="content" x-on:popstate.window="init()">
 
             <?php \wp_nav_menu([
                 'menu'           => 'Primary Menu',
@@ -28,7 +30,7 @@
             ]); ?>
 
             <div x-show="currentRoute">
-                <h2 x-text="pageCache[currentRoute] ? pageCache[currentRoute].title.rendered : ''" class="text-3xl font-bold underline"></h2>
+                <h2 x-text="pageCache[currentRoute] ? pageCache[currentRoute].title.rendered : ''"></h2>
                 <div x-html="pageCache[currentRoute] ? pageCache[currentRoute].content.rendered : ''"></div>
             </div>
 
