@@ -3,6 +3,7 @@ import { getCurrentSlug, fetchPage } from './wordpress/functions';
 
 const wpApp = {
     currentRoute: '',
+    data: {},
     pageCache: {},
 
     init() {
@@ -16,6 +17,7 @@ const wpApp = {
 
         if (this.pageCache[route]) {
             this.currentRoute = route;
+            this.data = this.pageCache[route];
             this.updateURL(route);
         } else {
             fetchPage(route)
@@ -23,6 +25,7 @@ const wpApp = {
                 .then((data) => {
                     this.pageCache[route] = data[0];
                     this.currentRoute = route;
+                    this.data = data[0];
                     this.updateURL(route);
                 });
         }
@@ -43,6 +46,14 @@ const wpApp = {
             window.history.pushState(null, null, url);
         }
     },
+
+    currData() {
+        return this.currStore;
+    },
 };
 
 Alpine.data('wpApp', () => wpApp);
+
+document.addEventListener('alpine:init', async () => {
+    Alpine.store('post', wpApp);
+})

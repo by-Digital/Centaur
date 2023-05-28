@@ -31,8 +31,8 @@
                 'walker'         => new \Centaur\Helper\NavWalker()
             ]); ?>
 
-            <div x-show="currentRoute">
-                <h2 x-text="pageCache[currentRoute] ? pageCache[currentRoute].title.rendered : ''"></h2>
-                <div x-html="pageCache[currentRoute] ? pageCache[currentRoute].content.rendered : ''"></div>
+            <div>
+                <h2 x-text="$store.post?.data?.title?.rendered"></h2>
+                <div x-html="$store.post?.data?.content?.rendered"></div>
             </div>
 
