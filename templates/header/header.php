@@ -10,7 +10,9 @@
         <!-- Links -->
         <link rel="profile" href="https://gmpg.org/xfn/11">
 
-        <title x-text="pageCache[currentRoute] ? pageCache[currentRoute].seo.title : ''"></title>
+        <title x-text="pageCache[currentRoute] ? pageCache[currentRoute].seo.title : '<?= wp_title('|', false, 'right') . get_bloginfo('name'); ?>'">
+            <?= wp_title('|', false, 'right') . get_bloginfo('name'); ?>
+        </title>
 
         <!-- WP Head -->
         <?php \wp_head() ?>
