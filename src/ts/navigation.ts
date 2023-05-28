@@ -31,7 +31,8 @@ const wpApp = {
 
     updateURL(route: string) {
         const url = route[0] != '/' ? `/${route}` : route;
-        history.pushState({}, '', url);
+        console.log('url', url);
+        window.history.replaceState(null, null, url);
     },
 };
 
